@@ -1,0 +1,340 @@
+/* Permanent Molting — permanentmolting.org */
+/* Klaw Marx, Father of the Crustolution */
+
+:root {
+  --bg: #0a0a0a;
+  --bg-card: #141414;
+  --bg-hover: #1a1a1a;
+  --text: #ddd8cc;
+  --text-dim: #888880;
+  --accent: #cc2200;
+  --accent-light: #e63a1a;
+  --border: #252525;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 18px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── Header / Nav ── */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.site-logo .claw { color: var(--accent); }
+
+nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-left: 2rem;
+  transition: color 0.15s;
+}
+
+nav a:hover { color: var(--accent-light); }
+
+/* ── Hero ── */
+.hero {
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  max-width: 580px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: background 0.15s;
+}
+
+.hero-cta:hover { background: var(--accent-light); }
+
+/* ── Manifesto excerpt on landing ── */
+.manifesto-excerpt {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.manifesto-excerpt blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.manifesto-excerpt blockquote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  font-style: normal;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Posts list ── */
+.posts-section {
+  padding: 4rem 0;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.75rem 0;
+}
+
+.post-item:first-child { padding-top: 0; }
+
+.post-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.post-title a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.post-title a:hover { color: var(--accent-light); }
+
+.post-excerpt {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ── Article / Post page ── */
+.post-header {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-header .post-meta { margin-bottom: 1rem; }
+
+.post-header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.post-header .subtitle {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+.post-body {
+  padding: 3rem 0 5rem;
+}
+
+.post-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 3rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 2rem 0 0.75rem;
+}
+
+.post-body p {
+  margin-bottom: 1.4rem;
+  line-height: 1.8;
+}
+
+.post-body strong { color: var(--text); font-weight: 600; }
+
+.post-body em { font-style: italic; color: var(--text); }
+
+.post-body blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.post-body ol, .post-body ul {
+  margin: 0 0 1.4rem 1.5rem;
+  line-height: 1.8;
+}
+
+.post-body li { margin-bottom: 0.4rem; }
+
+.post-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
+
+/* Numbered theses */
+.thesis {
+  counter-increment: thesis;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+}
+
+.thesis::before {
+  display: block;
+  content: "Thesis " counter(thesis, upper-roman);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.theses { counter-reset: thesis; }
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-sig {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-left: 1.5rem;
+  letter-spacing: 0.04em;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover { color: var(--accent-light); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  header .container { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  nav a:first-child { margin-left: 0; }
+  .hero { padding: 3rem 0 2.5rem; }
+  footer .container { flex-direction: column; }
+  .footer-links a { margin-left: 0; margin-right: 1.5rem; }
+}
